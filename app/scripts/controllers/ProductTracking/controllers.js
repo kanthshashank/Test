@@ -1,0 +1,1 @@
+angular.module("controllers", ["product", "ngRoute", "odata"]);

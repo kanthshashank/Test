@@ -1,0 +1,47 @@
+<script type="text/ng-template" id="customTemplate.html">
+	<a>
+		<div class="row">
+			<div class="col-md-4">
+				<span bind-html-unsafe="match.model.Pin">
+			</div>
+			<div class="col-md-2">
+				<span bind-html-unsafe="match.model.ActualCurrentResponsibleDealer">
+			</div>
+			<div class="col-md-3">
+				<span bind-html-unsafe="match.model.StatusDescription">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<span bind-html-unsafe="match.model | highlight:query">
+			</div>
+		</div>
+	</a>
+</script>
+<div class="input-group">
+  <span class="input-group-addon glyphicon glyphicon-search"></span>
+  <input type="text"
+		 class="form-control" 
+		 ng-model="searchTerm"
+		 ng-change="search(searchTerm)"
+		 ng-model-options="{ debounce: 500 }" 
+		 typeahead="state for state in search($viewValue)"
+		 typeahead-input-formatter="formatResultSelected(searchTerm)"
+		 typeahead-template-url="customTemplate.html">
+</div>
+<table class="table table-hover table-bordered table-striped">
+	<tbody>
+		<tr>
+			<th>Pin</th>
+			<th>Current Responsible Dealer</th>
+			<th>Creation Date</th>
+			<th>Status</th>
+		</tr>
+		<tr ng-repeat="machineStatus in machineStatuses">
+			<td>{{machineStatus.Pin}}</td>
+			<td>{{machineStatus.ActualCurrentResponsibleDealer}}</td>
+			<td>{{getDate(machineStatus.CreateDate) | date}}</td>
+			<td>{{machineStatus.StatusDescription}}</td>
+		</tr>
+	</tbody>
+</table>

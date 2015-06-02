@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html	ng-app="main">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Test</title>
+		<!-- Bootstrap -->
+		<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="css/CustomStyles.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container page-header row">
+			<div class="col-xs-12 col-md-10">
+				<h1>John Deere Warranty System</h1>
+			</div>
+			<div class="col-xs-6 col-md-2">
+				<img src="img/deere.logo.png" class="img-responsive logo"/>
+			</div>
+		</div>
+		<div class="brandbarTop"></div>
+		<div class="brandbarBottom"></div>
+		
+        <div ui-view></div>
+        
+		<!-- jQuery -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		
+		<!-- AngularJS Files -->
+		<script	src="bower_components/angular/angular.js"></script>
+		<script	src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
+		
+		<!-- Bootstrap -->
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		
+		<!-- Angular Bootstrap -->
+		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        
+        <!--Angular UI Router-->
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		
+		<!-- Services -->
+		<script src="scripts/services/odata.js"></script>
+        <script src="scripts/services/main.js"></script>
+		<script src="scripts/services/product.js"></script>
+		
+		<!--Filters-->
+		<script src="scripts/filters/main.js"></script>
+		
+		<!-- Controllers -->
+		<script src="scripts/controllers/main.js"></script>
+		<!-- Product Tracking -->
+		<script src="scripts/controllers/ProductTracking/controllers.js"></script>
+		<script src="scripts/controllers/ProductTracking/productInformation.js"></script>
+		<script src="scripts/controllers/ProductTracking/registerProduct.js"></script>
+		<!--TCSM-->
+		<script src="scripts/controllers/TCSM/machineStatus.js"></script>
+		<script src="scripts/controllers/TCSM/laborRate.js"></script>
+	</body>
+</html>

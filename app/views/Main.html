@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation" ng-mouseleave="removeChildLinks()">
+    <div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ng-repeat="(key, oLink) in links">
+                    <a ng-mouseenter="setChildLinks($event)">{{oLink.description}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+	
+	<div class="row">
+		<div ng-show="applicationStatus.busy" class="col-md-12">
+			<progressbar value="100" class="progress-striped active" type="warning">
+				{{applicationStatus.description}}
+			</progressbar>
+		</div>
+	</div>
+
+    <div class="row" ng-show="!!childLinks">
+        <ol class="breadcrumb">
+            <li ng-repeat="(key, oLink) in childLinks">
+                <a ng-href="{{oLink.url}}">{{oLink.description}}</a>
+            </li>
+        </ol>
+    </div>
+</nav>
+
+<div class="container-fluid" ui-view></div>
